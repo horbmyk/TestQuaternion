@@ -37,4 +37,14 @@ public class RayController : MonoBehaviour
         if (Physics.Raycast(_rayTargets, out _hitTargets))
             Debug.Log("Targets Name: " + _hitTargets.collider.name + "  " + " Distance to Target = " + _hitTargets.distance);
     }
+
+    void OnGUI()
+    {
+        GUIStyle style = new GUIStyle();
+        style.fontSize = 24;
+        GUI.Label(new Rect(10, 0, 0, 0), " 1. Select a new targets with the MouseLeftButton", style);
+        GUI.Label(new Rect(10, 25, 0, 0), " 2. Get Targets Info  - press Spase ", style);
+
+    }
+
 }
