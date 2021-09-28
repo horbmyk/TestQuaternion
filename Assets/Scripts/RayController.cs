@@ -49,7 +49,5 @@ public class RayController : MonoBehaviour
         style.fontSize = 24;
         GUI.Label(new Rect(10, 0, 0, 0), " 1. Select a new targets with the MouseLeftButton", style);
         GUI.Label(new Rect(10, 25, 0, 0), " 2. Get Targets Info  - press Spase ", style);
-
     }
-
 }
