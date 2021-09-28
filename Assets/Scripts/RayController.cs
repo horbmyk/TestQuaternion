@@ -9,6 +9,11 @@ public class RayController : MonoBehaviour
     private RaycastHit _hitTargets;
     private RaycastHit _hitMouse;
 
+    private void Start()
+    {
+        _rayTargets = new Ray(_startPosRay.position, _targetPosRay.position);
+    }
+
     private void Update()
     {
         if (Input.GetMouseButton(0))
