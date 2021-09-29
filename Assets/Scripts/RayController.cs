@@ -43,7 +43,7 @@ public class RayController : MonoBehaviour
             Debug.Log("Targets Name: " + _hitTargets.collider.name + "  " + " Distance to Target = " + _hitTargets.distance);
     }
 
-    void OnGUI()
+    private void OnGUI()
     {
         GUIStyle style = new GUIStyle();
         style.fontSize = 24;
