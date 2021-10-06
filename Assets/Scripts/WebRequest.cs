@@ -18,11 +18,11 @@ public class WebRequest : MonoBehaviour
         {
             Debug.Log(www.error);
         }
-        //else
-        //{
-        //    string json = www.downloadHandler.text;
-        //    var desirializetGetData = JsonUtility.FromJson(json);
-        //    Debug.Log(www.downloadHandler.text);
-        //}
+        else
+        {
+            string json = www.downloadHandler.text;
+            var desirializetGetData = JsonUtility.FromJson<WebRequest>(json);
+            Debug.Log(desirializetGetData);
+        }
     }
 }
