@@ -18,7 +18,7 @@ public class RotationController : MonoBehaviour
 
     private Quaternion RotationY;
 
-    const float FULL_REVOLUTION = 360f;
+    private const float FULL_REVOLUTION = 360f;
 
     private void Update()
     {
