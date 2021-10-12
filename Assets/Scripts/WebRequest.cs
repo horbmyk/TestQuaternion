@@ -38,7 +38,7 @@ namespace Test
             }
         }
 
-        IEnumerator Upload()
+        private IEnumerator Upload()
         {
             List<IMultipartFormSection> formData = new List<IMultipartFormSection>();
             formData.Add(new MultipartFormDataSection("field1=foo&field2=bar"));
