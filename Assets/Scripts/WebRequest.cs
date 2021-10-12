@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.Networking;
+using System.Collections.Generic;
 
 namespace Test
 {
@@ -13,12 +14,11 @@ namespace Test
             EventHandler instance = new EventHandler();
             instance.EventShowJson += instance.ViewJsonFirst;
             instance.EventShowJson += instance.ViewJsonSecond;
-            StartCoroutine(GetText(instance));
-            // пост Html
-            // 1 postman
-            // 2 сделать post
-            // 3 гет передавать с параметрами
-            // Код ревью Microsoft
+
+            //StartCoroutine(GetText(instance));
+            StartCoroutine(Upload());
+
+            //  гет передавать с параметрами
         }
 
 
@@ -35,6 +35,25 @@ namespace Test
                 string json = www.downloadHandler.text;
                 var desirializetGetData = JsonUtility.FromJson<ExampleJson>(json);
                 eventHandler.InvokeEvent(desirializetGetData.url);
+            }
+        }
+
+        IEnumerator Upload()
+        {
+            List<IMultipartFormSection> formData = new List<IMultipartFormSection>();
+            formData.Add(new MultipartFormDataSection("field1=foo&field2=bar"));
+            formData.Add(new MultipartFormFileSection("my file data", "myfile.txt"));
+            UnityWebRequest www = UnityWebRequest.Post("https://www.postman-echo.com/post", formData);
+
+            yield return www.SendWebRequest();
+
+            if (www.result != UnityWebRequest.Result.Success)
+            {
+                Debug.Log(www.error);
+            }
+            else
+            {
+                Debug.Log("Form upload complete!");
             }
         }
 
@@ -58,7 +77,6 @@ namespace Test
                 Debug.Log("ViewJsonSecond");
                 Debug.Log(json);
             }
-
         }
     }
 }
