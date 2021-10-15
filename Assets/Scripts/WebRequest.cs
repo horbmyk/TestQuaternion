@@ -7,24 +7,18 @@ namespace Test
 {
     public class WebRequest : MonoBehaviour
     {
+        [TextArea] [SerializeField] private string _url;
         public delegate void ShowJsonEventHandler(string json);
+        public event ShowJsonEventHandler ResponseReceived;
 
-        void Start()
+        private void OnEnable()
         {
-            EventHandler instance = new EventHandler();
-            instance.EventShowJson += instance.ViewJsonFirst;
-            instance.EventShowJson += instance.ViewJsonSecond;
-
-            //StartCoroutine(GetText(instance));
-            StartCoroutine(Upload());
-
-            //  гет передавать с параметрами
+            StartCoroutine(GetText(_url));
         }
 
-
-        private IEnumerator GetText(EventHandler eventHandler)
+        private IEnumerator GetText(string url)
         {
-            UnityWebRequest www = UnityWebRequest.Get("https://www.postman-echo.com/get");
+            UnityWebRequest www = UnityWebRequest.Get(url);
             yield return www.SendWebRequest();
 
             if (www.result != UnityWebRequest.Result.Success)
@@ -34,7 +28,7 @@ namespace Test
             {
                 string json = www.downloadHandler.text;
                 var desirializetGetData = JsonUtility.FromJson<ExampleJson>(json);
-                eventHandler.InvokeEvent(desirializetGetData.url);
+                ResponseReceived?.Invoke(json);
             }
         }
 
