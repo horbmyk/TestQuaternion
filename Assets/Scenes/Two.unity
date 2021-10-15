@@ -235,7 +235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68e76aff957f4d9408743e9f789658c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _url: 
+  _url: https://www.postman-echo.com/get
 --- !u!4 &1204205544
 Transform:
   m_ObjectHideFlags: 0
