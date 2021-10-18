@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 namespace ClonePlayMarket
 {
-    public class ClickButton : MonoBehaviour
+    public class AppButton : MonoBehaviour
     {
         private Text _description;
 
