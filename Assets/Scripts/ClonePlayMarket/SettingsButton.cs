@@ -6,8 +6,6 @@ namespace ClonePlayMarket
     {
         [SerializeField] private GameObject _mainMenu;
         private bool _isClick;
-        //Retourn Start pos
-        //Animatoins
 
         private void Awake()
         {

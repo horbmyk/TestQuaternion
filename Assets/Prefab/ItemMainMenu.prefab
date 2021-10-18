@@ -78,7 +78,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Setting
+  m_Text: 'Item Menu
 
 '
 --- !u!1 &9200979206352951565
@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 8035940001098201051}
   - component: {fileID: 1663495739377319518}
   - component: {fileID: -2987223170281500134}
+  - component: {fileID: 5766168379276880744}
   m_Layer: 0
   m_Name: ItemMainMenu
   m_TagString: Untagged
@@ -248,3 +249,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28bb76ddd82964f4680f556bb9d29ffc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &5766168379276880744
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9200979206352951565}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 20245bd2594feaf44ac495202dfca451, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
